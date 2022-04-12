@@ -1,0 +1,8 @@
+@import url('http://fonts.cdnfonts.com/css/harry-potter');
+body {
+    font-family: 'Harry Potter', sans-serif;
+    background-image: url(Images/hp-background.jpg);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+}
