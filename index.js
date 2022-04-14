@@ -13,7 +13,7 @@ function addMainContent() {
     const divContent = `
     <a class="covers" href="characters.html"><img class="cover one" src="images/character-cover2.jpg" />
     </a>
-    <a class="covers" href="houses.html"><img class="cover two" src="images/house-cover2.jpg" /></a>
+    <a class="covers" href="houses.html"><img class="cover two" src="images/houses-cover4.jpg" /></a>
     <a class="covers" href="spells.html"><img class="cover three" src="images/spells-cover2.jpg" /></a>
     <a class="covers" href="quiz.html"><img class="cover four" src="images/quiz-cover2.jpg" /></a>
     `

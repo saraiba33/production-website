@@ -71,6 +71,7 @@ header {
 @media (min-width: 1300px) {
     .cover.two {
         grid-row: 2;
+        height: 450px;
     }
 }
 
