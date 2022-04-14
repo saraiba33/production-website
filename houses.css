@@ -1,0 +1,18 @@
+@import url('http://fonts.cdnfonts.com/css/harry-potter');
+body {
+    font-family: 'Harry Potter', sans-serif;
+    background-image: url(images/hp-background.jpg);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+}
+
+header {
+    background-color: hsl(0, 53%, 32%);
+    font-size: 44px;
+    color: hsl(41, 84%, 58%);
+    padding: 46px;
+    margin-bottom: 10px;
+    box-sizing: border-box;
+    text-align: center;
+}
