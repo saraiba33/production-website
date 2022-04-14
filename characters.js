@@ -25,7 +25,7 @@ const getCharacters = () => {
         <img class="character-image" src="${characters.image}" alt="${characters.name}"/>
         <p>${characters.name}</p>
         <p>${characters.house}</p>
-        `).join('')
+        `)
         div.innerHTML = characterImages
         body.append(div)
     }
