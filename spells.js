@@ -7,8 +7,6 @@ const getSpells = () => {
         promises.push(fetch(url)
             .then((response) => response.json()));
     }
-
-
     Promise.all(promises).then((results) => {
         const allSpells = results.map((data) => ({
             name: data.spell,
@@ -17,8 +15,6 @@ const getSpells = () => {
         }));
         createDiv(allSpells)
     });
-
-
     const div = document.createElement("div")
     div.classList.add("spells-list")
     const createDiv = (allSpells) => {
@@ -32,3 +28,11 @@ const getSpells = () => {
 }
 
 getSpells()
+
+const header = document.createElement("header")
+header.classList.add("main-header")
+const headerContent = `
+    <h1>Welcome to The Wizarding World</h1>
+    `
+header.innerHTML = headerContent
+body.append(header)

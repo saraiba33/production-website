@@ -21,33 +21,3 @@ function addMainContent() {
     body.append(div)
 }
 addMainContent()
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// function getCharacters() {
-//     fetch(`http://hp-api.herokuapp.com/api/characters`)
-//         .then(response => {
-//             return response.json()
-//         }).then(parsedResponse => {
-//             console.log(parsedResponse)
-//         })
-// }
