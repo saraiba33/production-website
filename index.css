@@ -1,107 +1,110 @@
- @import url('http://fonts.cdnfonts.com/css/harry-potter');
- body {
-     font-family: 'Harry Potter', sans-serif;
-     background-image: url(images/hp-background.jpg);
-     background-repeat: no-repeat;
-     background-attachment: fixed;
-     background-size: cover;
- }
- 
- header {
-     background-color: hsl(0, 53%, 32%);
-     font-size: 44px;
-     color: hsl(41, 84%, 58%);
-     padding: 46px;
-     margin-bottom: 10px;
-     box-sizing: border-box;
-     text-align: center;
- }
- 
- .catagories {
-     display: relative;
-     height: 500px;
- }
- 
- @media (min-width: 1300px) {
-     .catagories {
-         display: grid;
-         grid-auto-columns: 1fr;
-         grid-template-rows: repeat(4, 1fr);
-     }
- }
- 
- .cover {
-     position: absolute;
-     width: 300px;
-     left: 50%;
- }
- 
- .cover.four {
-     transform: rotate(20deg);
-     bottom: 5%;
-     left: 72%;
-     height: 450px;
- }
- 
- @media (min-width: 1300px) {
-     .cover.four {
-         grid-row: 4;
-     }
- }
- 
- .cover.three {
-     bottom: 15%;
-     transform: rotate(10deg);
-     bottom: 15%;
-     left: 52%;
- }
- 
- @media (min-width: 1300px) {
-     .cover.three {
-         grid-row: 3;
-     }
- }
- 
- .cover.two {
-     transform: rotate(-10deg);
-     bottom: 15%;
-     left: 30%;
- }
- 
- @media (min-width: 1300px) {
-     .cover.two {
-         grid-row: 2;
-     }
- }
- 
- .cover.one {
-     transform: rotate(-20deg);
-     bottom: 5%;
-     left: 10%;
-     height: 450px;
- }
- 
- @media (min-width: 1300px) {
-     .cover.one {
-         grid-row: 1;
-     }
- }
- 
- .cover:hover {
-     animation: bounce 1s linear;
- }
- 
- @keyframes bounce {
-     20% {
-         transform: translateY(-6px)
-     }
-     40% {
-         transform: translateY(0px)
-     }
-     60% {
-         transform: translateY(-2px)
-     }
-     80% {
-         transform: translateY(-0px)
-     }
- }
+@import url('http://fonts.cdnfonts.com/css/harry-potter');
+body {
+    font-family: 'Harry Potter', sans-serif;
+    background-image: url(images/hp-background.jpg);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+}
+
+header {
+    background-color: hsl(0, 53%, 32%);
+    font-size: 44px;
+    color: hsl(41, 84%, 58%);
+    padding: 46px;
+    margin-bottom: 10px;
+    box-sizing: border-box;
+    text-align: center;
+}
+
+.catagories {
+    display: relative;
+    height: 500px;
+}
+
+@media (min-width: 1300px) {
+    .catagories {
+        display: grid;
+        grid-auto-columns: 1fr;
+        grid-template-rows: repeat(4, 1fr);
+    }
+}
+
+.cover {
+    position: absolute;
+    width: 300px;
+    left: 50%;
+}
+
+.cover.four {
+    transform: rotate(20deg);
+    bottom: 5%;
+    left: 72%;
+    height: 450px;
+}
+
+@media (min-width: 1300px) {
+    .cover.four {
+        grid-row: 4;
+    }
+}
+
+.cover.three {
+    bottom: 15%;
+    transform: rotate(10deg);
+    bottom: 15%;
+    left: 52%;
+}
+
+@media (min-width: 1300px) {
+    .cover.three {
+        grid-row: 3;
+    }
+}
+
+.cover.two {
+    transform: rotate(-10deg);
+    bottom: 15%;
+    left: 30%;
+}
+
+@media (min-width: 1300px) {
+    .cover.two {
+        grid-row: 2;
+    }
+}
+
+.cover.one {
+    transform: rotate(-20deg);
+    bottom: 5%;
+    left: 10%;
+    height: 450px;
+}
+
+@media (min-width: 1300px) {
+    .cover.one {
+        grid-row: 1;
+    }
+}
+
+.cover:hover {
+    animation: bounce 1s linear;
+}
+
+@keyframes bounce {
+    20% {
+        transform: translateY(-6px)
+    }
+    40% {
+        transform: translateY(0px)
+    }
+    60% {
+        transform: translateY(-2px)
+    }
+    80% {
+        transform: translateY(-0px)
+    }
+}
+
+
+/*Character page style*/

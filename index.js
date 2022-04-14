@@ -1,11 +1,4 @@
-const url = `https://fedeperin-harry-potter-api-en.herokuapp.com/db`
 const body = document.querySelector("body")
-
-// function addHeader() {
-
-// }
-
-// addHeader()
 
 function addMainContent() {
     const header = document.createElement("header")
@@ -32,12 +25,6 @@ addMainContent()
 
 
 
-fetch(url)
-    .then(response => {
-        return response.json()
-    }).then(parsedResponse => {
-
-    })
 
 
 
