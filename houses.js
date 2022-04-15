@@ -11,19 +11,25 @@ function getGryffindor() {
     fetch(`http://hp-api.herokuapp.com/api/characters`)
         .then(response => response.json())
         .then(parsedResponse => {
-            const getFounder = parsedResponse.find(founder => founder.name === 'Godric Gryffindor')
-            console.log(getFounder)
+            const getFounder = parsedResponse
+                .find(founder => founder.name === 'Godric Gryffindor')
+            const p = document.createElement("p");
+            p.textContent = getFounder.name
+            body.append(p);
         })
 }
 
-getGodric()
+getGryffindor()
 
 function getRavenClaw() {
     fetch(`http://hp-api.herokuapp.com/api/characters`)
         .then(response => response.json())
         .then(parsedResponse => {
-            const getFounder = parsedResponse.find(founder => founder.name === 'Rowena Ravenclaw')
-            console.log(getFounder)
+            const getFounder = parsedResponse
+                .find(founder => founder.name === 'Rowena Ravenclaw')
+            const p = document.createElement("p");
+            p.textContent = getFounder.name
+            body.append(p);
         })
 }
 
@@ -34,21 +40,27 @@ function getHufflepuff() {
     fetch(`http://hp-api.herokuapp.com/api/characters`)
         .then(response => response.json())
         .then(parsedResponse => {
-            const getFounder = parsedResponse.find(founder => founder.name === 'Helga Hufflepuff')
-            console.log(getFounder)
+            const getFounder = parsedResponse
+                .find(founder => founder.name === 'Helga Hufflepuff')
+            const p = document.createElement("p");
+            p.textContent = getFounder.name
+            body.append(p);
         })
 }
 
 getHufflepuff()
 
 
-function getGodric() {
+function getSlytherin() {
     fetch(`http://hp-api.herokuapp.com/api/characters`)
         .then(response => response.json())
         .then(parsedResponse => {
-            const getFounder = parsedResponse.find(founder => founder.name === 'Salazar Slytherin')
-            console.log(getFounder)
+            const getFounder = parsedResponse
+                .find(founder => founder.name === 'Salazar Slytherin')
+            const p = document.createElement("p");
+            p.textContent = getFounder.name
+            body.append(p);
         })
 }
 
-getGodric()
+getSlytherin()
