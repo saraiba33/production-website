@@ -12,7 +12,26 @@ header {
     font-size: 44px;
     color: hsl(41, 84%, 58%);
     padding: 46px;
-    margin-bottom: 10px;
     box-sizing: border-box;
     text-align: center;
+}
+
+ul {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+}
+
+img {
+    width: 500px;
+}
+
+main {
+    font-size: 25px;
+    letter-spacing: 2px;
+    line-height: 1.8;
+    text-align: center;
+    padding: 40px 100px;
+    background-color: hsla(41, 84%, 58%, .5);
+    ;
 }
