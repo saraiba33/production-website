@@ -1,27 +1,39 @@
 const body = document.querySelector("body")
+const url = `http://hp-api.herokuapp.com/api/characters`
 
-const getCharacters = () => {
-    const promises = [];
-    for (let i = 1; i <= 23; i++) {
-        const url = `https://fedeperin-harry-potter-api-en.herokuapp.com/characters/${i}`;
-        promises.push(fetch(url).then((response) => response.json()));
-    }
+const header = document.createElement("header")
+header.classList.add("main-header")
+const headerContent = `
+    <h1>Characters</h1>
+    `
+header.innerHTML = headerContent
+body.append(header)
 
-    Promise.all(promises).then((results) => {
-        const allCharacters = results.map((data) => ({
-            name: data.character,
-            id: data.id,
-            image: data.image,
-            house: data.hogwartsHouse
-        }));
-        createDiv(allCharacters)
-    });
+function getCharactersWithImages() {
+    fetch(url)
+        .then(response => response.json())
+        .then(parsedResponse => {
+            const getCharacters = parsedResponse
+                .filter(character => character.image)
+                .map(character => ({
+                    name: character.name,
+                    patronus: character.patronus,
+                    image: character.image,
+                    house: character.house,
+                    wand: character.wand,
+                    ancestry: character.ancestry,
+                    dateOfBirth: character.dateOfBirth
+                }))
+            createDiv(getCharacters)
+        })
+
+
 
 
     const div = document.createElement("div")
     div.classList.add("character-images")
-    const createDiv = (allCharacters) => {
-        const characterImages = allCharacters.map(characters => `
+    const createDiv = (getCharacters) => {
+        const characterImages = getCharacters.map(characters => `
         <img class="character-image" src="${characters.image}" alt="${characters.name}"/>
         <p>${characters.name}</p>
         <p>${characters.house}</p>
@@ -31,12 +43,24 @@ const getCharacters = () => {
     }
 }
 
-getCharacters()
 
-const header = document.createElement("header")
-header.classList.add("main-header")
-const headerContent = `
-    <h1>Characters</h1>
-    `
-header.innerHTML = headerContent
-body.append(header)
+getCharactersWithImages()
+
+
+//Removed to use differnet API
+// const getCharacters = () => {
+//     const promises = [];
+//     for (let i = 1; i <= 23; i++) {
+//         const url = `https://fedeperin-harry-potter-api-en.herokuapp.com/characters/${i}`;
+//         promises.push(fetch(url).then((response) => response.json()));
+//     }
+
+//     Promise.all(promises).then((characters) => {
+//         const allCharacters = characters.map((data) => ({
+//             name: data.character,
+//             id: data.id,
+//             image: data.image,
+//             house: data.hogwartsHouse
+//         }));
+//         createDiv(allCharacters)
+//     });

@@ -1,4 +1,5 @@
 @import url('http://fonts.cdnfonts.com/css/harry-potter');
+@import url('https://fonts.googleapis.com/css2?family=Yusei+Magic&display=swap');
 body {
     font-family: 'Harry Potter', sans-serif;
     background-image: url(images/hp-background.jpg);
@@ -15,18 +16,55 @@ header {
     margin-bottom: 10px;
     box-sizing: border-box;
     text-align: center;
+    text-decoration: none;
+}
+
+nav {
+    text-decoration: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+ul {
+    text-decoration: none;
+}
+
+li {
+    font-size: 25px;
+    list-style: none;
+    text-decoration: none;
+    color: hsl(41, 84%, 58%)
+}
+
+.page-title {
+    font-family: 'Harry Potter', sans-serif;
+    font-size: 45px;
+    text-align: center;
+    padding: 40px;
+}
+
+main {
+    background-color: hsl(41, 84%, 58%, 0.5);
+    font-family: 'Yusei Magic', sans-serif;
+    text-align: center;
+    font-size: 30px;
+    padding: 40px;
 }
 
 .catagories {
     display: relative;
-    height: 500px;
+    height: 680px;
+    clip-path: polygon(0 0, 100% 0%, 100% 100%, 0% 100%);
 }
 
-@media (min-width: 1300px) {
+@media (min-width: 1500px) {
     .catagories {
         display: grid;
         grid-auto-columns: 1fr;
         grid-template-rows: repeat(4, 1fr);
+        clip-path: none;
     }
 }
 
@@ -40,6 +78,7 @@ header {
     transform: rotate(20deg);
     bottom: 5%;
     left: 72%;
+    top: 60%;
     height: 450px;
 }
 
@@ -54,6 +93,7 @@ header {
     transform: rotate(10deg);
     bottom: 15%;
     left: 52%;
+    top: 46%
 }
 
 @media (min-width: 1300px) {
@@ -66,6 +106,8 @@ header {
     transform: rotate(-10deg);
     bottom: 15%;
     left: 30%;
+    top: 46%;
+    height: 450px;
 }
 
 @media (min-width: 1300px) {
@@ -79,6 +121,7 @@ header {
     transform: rotate(-20deg);
     bottom: 5%;
     left: 10%;
+    top: 60%;
     height: 450px;
 }
 
