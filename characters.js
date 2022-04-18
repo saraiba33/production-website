@@ -8,50 +8,46 @@ const headerContent = `
         <ul>
             <li><a href="index.html">Home<a></li>
             <li><a href="characters.html">Characters</a></li>
-            <li><a href="houses.html">Houses</a></li>
-            <li><a href="quiz.html">What's your Patronus?</a></li>
+            <li><a href="spells.html">Spells</a></li>
+            <li><a href="quiz.html">Patronus Quiz</a></li>
         </ul>
     </nav>
     `
 header.innerHTML = headerContent
 body.append(header)
 
-function getCharactersWithImages() {
-    fetch(url)
-        .then(response => response.json())
-        .then(parsedResponse => {
-            const getCharacters = parsedResponse
-                .filter(character => character.image)
-                .map(character => ({
-                    name: character.name,
-                    patronus: character.patronus,
-                    image: character.image,
-                    house: character.house,
-                    wand: character.wand,
-                    ancestry: character.ancestry,
-                    dateOfBirth: character.dateOfBirth
-                }))
-            createDiv(getCharacters)
-        })
+fetch(url)
+    .then(response => response.json())
+    .then(parsedResponse => {
+        const getCharacters = parsedResponse
+            .filter(character => character.image)
+            .map(character => ({
+                name: character.name,
+                patronus: character.patronus,
+                image: character.image,
+                house: character.house,
+                wand: character.wand,
+                ancestry: character.ancestry,
+                dateOfBirth: character.dateOfBirth
+            }))
+        createDiv(getCharacters)
+    })
 
 
 
 
-    const div = document.createElement("div")
-    div.classList.add("character-images")
-    const createDiv = (getCharacters) => {
-        const characterImages = getCharacters.map(characters => `
+const div = document.createElement("div")
+div.classList.add("character-images")
+const createDiv = (getCharacters) => {
+    const characterImages = getCharacters.map(characters => `
         <img class="character-image" src="${characters.image}" alt="${characters.name}"/>
         <p>${characters.name}</p>
         <p>${characters.house}</p>
         `)
-        div.innerHTML = characterImages
-        body.append(div)
-    }
+    div.innerHTML = characterImages
+    body.append(div)
 }
 
-
-getCharactersWithImages()
 
 
 //Removed to use differnet API

@@ -32,7 +32,14 @@ getSpells()
 const header = document.createElement("header")
 header.classList.add("main-header")
 const headerContent = `
-    <h1>Spells</h1>
+    <nav>
+        <ul>
+            <li><a href="index.html">Home<a></li>
+            <li><a href="characters.html">Characters</a></li>
+            <li><a href="spells.html">Spells</a></li>
+            <li><a href="quiz.html">Patronus Quiz</a></li>
+        </ul>
+    </nav>
     `
 header.innerHTML = headerContent
 body.append(header)

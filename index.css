@@ -10,32 +10,29 @@ body {
 
 header {
     background-color: hsl(0, 53%, 32%);
-    font-size: 44px;
-    color: hsl(41, 84%, 58%);
     padding: 46px;
-    margin-bottom: 10px;
     box-sizing: border-box;
-    text-align: center;
-    text-decoration: none;
-}
-
-nav {
-    text-decoration: none;
-}
-
-a {
-    text-decoration: none;
+    display: flex;
+    justify-content: end;
 }
 
 ul {
-    text-decoration: none;
+    display: flex;
 }
 
-li {
+li>a {
     font-size: 25px;
     list-style: none;
     text-decoration: none;
-    color: hsl(41, 84%, 58%)
+    color: black;
+    background-color: hsl(41, 84%, 58%);
+    border-radius: 15px;
+    padding: 10px;
+    margin: 20px;
+}
+
+li>a+a {
+    content: "|";
 }
 
 .page-title {
@@ -90,9 +87,9 @@ main {
 
 .cover.three {
     bottom: 15%;
-    transform: rotate(10deg);
+    /* transform: rotate(10deg); */
     bottom: 15%;
-    left: 52%;
+    left: 40%;
     top: 46%
 }
 
