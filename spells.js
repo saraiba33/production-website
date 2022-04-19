@@ -1,5 +1,20 @@
 const body = document.querySelector("body")
 
+const header = document.createElement("header")
+header.classList.add("main-header")
+const headerContent = `
+    <nav>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="characters.html">Characters</a></li>
+            <li><a href="spells.html">Spells</a></li>
+            <li><a href="quiz.html">Patronus Quiz</a></li>
+        </ul>
+    </nav>
+    `
+header.innerHTML = headerContent
+body.append(header)
+
 const getSpells = () => {
     const promises = [];
     for (let i = 1; i <= 72; i++) {
@@ -19,8 +34,8 @@ const getSpells = () => {
     div.classList.add("spells-list")
     const createDiv = (allSpells) => {
         const listOfSpells = allSpells.map(spell => `
-        <p>Spell Name: ${spell.name}</p>
-        <p>Use: ${spell.use}</p>
+        <p>${spell.name}</p>
+        <p>What does ${spell.name} do? It ${spell.use}</p>
         `)
         div.innerHTML = listOfSpells
         body.append(div)
@@ -28,18 +43,3 @@ const getSpells = () => {
 }
 
 getSpells()
-
-const header = document.createElement("header")
-header.classList.add("main-header")
-const headerContent = `
-    <nav>
-        <ul>
-            <li><a href="index.html">Home<a></li>
-            <li><a href="characters.html">Characters</a></li>
-            <li><a href="spells.html">Spells</a></li>
-            <li><a href="quiz.html">Patronus Quiz</a></li>
-        </ul>
-    </nav>
-    `
-header.innerHTML = headerContent
-body.append(header)

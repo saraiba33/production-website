@@ -18,7 +18,7 @@ body.append(header)
 
 const main = document.createElement("main")
 main.innerHTML = `
-<h2 class="page-title">Welcome to The Wizarding World</h2>
+<h2 class="page-title">Welcome to Hogwarts Library</h2>
 <p> We are glad you're able to visit our magical library.
 Choose a book and enter a world of wonder! (Don't forget to visit our last book to find find your patronus)
 </p>
