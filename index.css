@@ -31,10 +31,6 @@ li>a {
     margin: 20px;
 }
 
-li>a+a {
-    content: "|";
-}
-
 .page-title {
     font-family: 'Harry Potter', sans-serif;
     font-size: 45px;

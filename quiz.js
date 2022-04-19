@@ -16,15 +16,45 @@ const headerContent = `
 header.innerHTML = headerContent
 body.append(header)
 
+function getFormOptions() {
+    const main = document.createElement('main')
+    main.classList.add("form-container")
+
+    const displayOptions = `
+            <form name="quiz options">
+            <label for="first-name">First Name</label>
+            <input type="text" name="first-name" id="first-name" Required>
+            <select name="favorite-character" id="favorite-character">
+            </select>
+            <select name="favorite-spell" id="favorite-spell">
+            </select>
+            <input type="submit"/>
+            </form>
+            `
+    main.innerHTML = displayOptions
+    body.append(main)
+}
+
+
+
 function characterOption() {
     fetch(url)
         .then(response => response.json())
         .then(parsedResponse => {
             const getCharacters = parsedResponse.characters
             const onlyNames = getCharacters.map(characters => characters.character)
-            const formCharacterOption = [onlyNames[1], onlyNames[12], onlyNames[21]].forEach(name => console.log(name))
+            const characterOptions = [onlyNames[1], onlyNames[12], onlyNames[21]]
+            const selectCharacter = document.querySelector("#favorite-character")
+            const threeCharacterOptions = characterOptions.map(option => {
+                const options = document.createElement("option")
+                option.textConent =
+            })
+
+        }).catch(error => {
+            console.error(error.message)
         })
 }
+
 
 function spellOption() {
     fetch(url)
@@ -32,31 +62,25 @@ function spellOption() {
         .then(parsedResponse => {
             const getSpells = parsedResponse.spells
             const onlySpells = getSpells.map(spells => spells.spell)
-            const SpellOption = [onlySpells[21], onlySpells[53]]
-
+            const spellOptions = [onlySpells[21], onlySpells[53]]
+            const twoSpellOptions = spellOptions.map(option => `<option value="">${option}</option>`)
+            getFormOptions(twoSpellOptions)
+        }).catch(error => {
+            console.error(error.message)
         })
 }
-const main = document.createElement('main')
-main.classList.add("form-container")
-const getOptions = `
-            <form name="quiz options">
-            <label for="first-name">First Name</label>
-            <input type="text" name="first-name" id="first-name" Required>
-            <select name="favorite-character" id="">
-            </select>
-            <select name="favorite-Spell" id="">
-            </select>
-            <input type="submit"/>
-            </form>
-            `
-main.innerHTML = getOptions
-body.append(main)
+
+
+
+
+
+
 
 
 
 // const formContent = `
 //             <form action="">
-//                 <label for="full-name">Full Name</label>        
+//                 <label for="full-name">Full Name</label>
 //                 <input type="text" name="full-name" id="full-name" Required>
 //                 <select name="favorite-character" id="">
 //                     <option value="character-names">

@@ -18,7 +18,7 @@ module.exports = {
         "comma-spacing": "error",
         "comma-style": "error",
         "func-call-spacing": "error",
-        "indent": ["error", 2],
+        "indent": ["error", 4],
         "key-spacing": "error",
         "keyword-spacing": "error",
         "max-len": "warn",

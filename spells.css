@@ -18,6 +18,21 @@ header {
     text-align: center;
 }
 
+ul {
+    display: flex;
+}
+
+li>a {
+    font-size: 25px;
+    list-style: none;
+    text-decoration: none;
+    color: black;
+    background-color: hsl(41, 84%, 58%);
+    border-radius: 15px;
+    padding: 10px;
+    margin: 20px;
+}
+
 div {
     font-family: 'Yusei Magic', sans-serif;
 }

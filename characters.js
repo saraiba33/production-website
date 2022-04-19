@@ -5,7 +5,7 @@ const header = document.createElement("header")
 header.classList.add("main-header")
 const headerContent = `
     <nav>
-        <ul>
+        <ul class="nav-bar">
             <li><a href="index.html">Home<a></li>
             <li><a href="characters.html">Characters</a></li>
             <li><a href="spells.html">Spells</a></li>
@@ -26,26 +26,33 @@ fetch(url)
                 patronus: character.patronus,
                 image: character.image,
                 house: character.house,
-                wand: character.wand,
                 ancestry: character.ancestry,
                 dateOfBirth: character.dateOfBirth
             }))
-        createDiv(getCharacters)
+        createMain(getCharacters)
+    }).catch(error => {
+        console.error(error.message)
     })
 
 
 
 
-const div = document.createElement("div")
-div.classList.add("character-images")
-const createDiv = (getCharacters) => {
-    const characterImages = getCharacters.map(characters => `
-        <img class="character-image" src="${characters.image}" alt="${characters.name}"/>
-        <p>${characters.name}</p>
-        <p>${characters.house}</p>
-        `)
-    div.innerHTML = characterImages
-    body.append(div)
+const main = document.createElement("div")
+main.classList.add("character-info")
+const createMain = (getCharacters) => {
+    const characterList = getCharacters.map(characters => `
+        <ul class="card-container">
+        <li class="card">
+        <img class="card-image" src="${characters.image}" alt="${characters.name}"/>
+        <p class="card-name">${characters.name}</p>
+        <p class="card-house">Hogwarts House:${characters.house}
+        <p class "card-ancestry">Ancestry:${characters.ancestry}</p>
+        <p class="card-patronus">Patronus:${characters.patronus}</p>
+        </li>
+        </ul>
+        `).join()
+    main.innerHTML = characterList
+    body.append(main)
 }
 
 
