@@ -3,12 +3,13 @@ const body = document.querySelector("body")
 const header = document.createElement("header")
 header.classList.add("main-header")
 const headerContent = `
+    <img class="logo" src="images/hogwarts-logo.png" />
     <nav>
-        <ul>
-            <li><a href="index.html">Home</a></li>
-            <li><a href="characters.html">Characters</a></li>
-            <li><a href="spells.html">Spells</a></li>
-            <li><a href="quiz.html">Patronus Quiz</a></li>
+        <ul class="nav-bar">
+            <li class="page-links"><a href="index.html">Home</a></li>
+            <li class="page-links"><a href="characters.html">Characters</a></li>
+            <li class="page-links"><a href="spells.html">Spells</a></li>
+            <li class="page-links"><a href="quiz.html">Patronus Quiz</a></li>
         </ul>
     </nav>
     `
