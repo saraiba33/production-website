@@ -2,22 +2,6 @@ const body = document.querySelector("body")
 const url = `http://hp-api.herokuapp.com/api/characters`
 const main = document.querySelector("main")
 
-const header = document.createElement("header")
-header.classList.add("main-header")
-const headerContent = `
-    <img class="logo" src="images/hogwarts-logo.png" />
-    <nav>
-        <ul class="nav-bar">
-            <li class="page-links"><a href="index.html">Home</a></li>
-            <li class="page-links"><a href="characters.html">Characters</a></li>
-            <li class="page-links"><a href="spells.html">Spells</a></li>
-            <li class="page-links"><a href="quiz.html">Patronus Quiz</a></li>
-        </ul>
-    </nav>
-    `
-header.innerHTML = headerContent
-body.append(header)
-
 fetch(url)
     .then(response => response.json())
     .then(parsedResponse => {
@@ -52,5 +36,5 @@ const createUl = (getCharacters) => {
         </li>
         `
     )
-    body.append(ul)
+    main.append(ul)
 }

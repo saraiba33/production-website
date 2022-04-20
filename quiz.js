@@ -1,39 +1,7 @@
 const body = document.querySelector("body")
 const url = `https://fedeperin-harry-potter-api-en.herokuapp.com/db`
-
-const header = document.createElement("header")
-header.classList.add("main-header")
-const headerContent = `
-    <nav>
-        <ul>
-            <li><a href="index.html">Home<a></li>
-            <li><a href="characters.html">Characters</a></li>
-            <li><a href="spells.html">Spells</a></li>
-            <li><a href="quiz.html">Patronus Quiz</a></li>
-        </ul>
-    </nav>
-    `
-header.innerHTML = headerContent
-body.append(header)
-
-function getFormOptions() {
-    const main = document.createElement('main')
-    main.classList.add("form-container")
-
-    const displayOptions = `
-            <form name="quiz options">
-            <label for="first-name">First Name</label>
-            <input type="text" name="first-name" id="first-name" Required>
-            <select name="favorite-character" id="favorite-character">
-            </select>
-            <select name="favorite-spell" id="favorite-spell">
-            </select>
-            <input type="submit"/>
-            </form>
-            `
-    main.innerHTML = displayOptions
-    body.append(main)
-}
+const selectOne = document.querySelector(".character-select")
+const selectTwo = document.querySelector(".spell-select")
 
 
 
@@ -42,18 +10,22 @@ function characterOption() {
         .then(response => response.json())
         .then(parsedResponse => {
             const getCharacters = parsedResponse.characters
-            const onlyNames = getCharacters.map(characters => characters.character)
-            const characterOptions = [onlyNames[1], onlyNames[12], onlyNames[21]]
-            const selectCharacter = document.querySelector("#favorite-character")
-            const threeCharacterOptions = characterOptions.map(option => {
-                const options = document.createElement("option")
-                option.textConent =
-            })
+            const onlyNames = getCharacters.map(characters => characters.character).filter((name, index) => [1, 12, 21].includes(index)).map(name => {
+                const option1 = document.createElement("option")
+                option.classList.add("character-options")
+                option.textContent = name
+                option.value = name
+                return option
+            }).forEach(option =>
+                selectOne.append(option)
+            )
 
         }).catch(error => {
             console.error(error.message)
         })
 }
+
+characterOption()
 
 
 function spellOption() {
@@ -61,31 +33,21 @@ function spellOption() {
         .then(response => response.json())
         .then(parsedResponse => {
             const getSpells = parsedResponse.spells
-            const onlySpells = getSpells.map(spells => spells.spell)
-            const spellOptions = [onlySpells[21], onlySpells[53]]
-            const twoSpellOptions = spellOptions.map(option => `<option value="">${option}</option>`)
-            getFormOptions(twoSpellOptions)
+            const onlySpells = getSpells
+                .map(spells => spells.spell)
+                .filter((spell, index) => [21, 53]
+                    .includes(index))
+                .map(name => {
+                    const option = document.createElement("option")
+                    option.classList.add("spell-options")
+                    option.textContent = name
+                    option.value = name
+                    return option
+                }).forEach(option =>
+                    selectTwo.append(option)
+                )
         }).catch(error => {
             console.error(error.message)
         })
 }
-
-
-
-
-
-
-
-
-
-// const formContent = `
-//             <form action="">
-//                 <label for="full-name">Full Name</label>
-//                 <input type="text" name="full-name" id="full-name" Required>
-//                 <select name="favorite-character" id="">
-//                     <option value="character-names">
-
-//                     </option>
-//                 </select>
-//             </form>
-//             `
+spellOption()

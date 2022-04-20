@@ -9,33 +9,50 @@ body {
 }
 
 header {
-    background-color: hsl(0, 53%, 32%);
+    background-color: hsl(0, 100%, 19%);
+    font-size: 44px;
     padding: 46px;
+    margin-bottom: 10px;
     box-sizing: border-box;
+    text-align: center;
     display: flex;
-    justify-content: end;
+    flex-direction: column;
 }
 
-ul {
+.logo {
+    width: 140px;
+}
+
+.nav-bar {
     display: flex;
+    align-content: center;
+}
+
+nav {
+    display: flex;
+    align-self: center;
+}
+
+.page-links {
+    justify-self: center;
+}
+
+.page-links a+a {
+    content: "|";
 }
 
 li>a {
-    font-size: 25px;
+    font-size: 30px;
     list-style: none;
     text-decoration: none;
-    color: black;
-    background-color: hsl(41, 84%, 58%);
+    color: white;
     border-radius: 15px;
-    padding: 10px;
+    padding: 10px 20px;
     margin: 20px;
 }
 
-.page-title {
-    font-family: 'Harry Potter', sans-serif;
-    font-size: 45px;
-    text-align: center;
-    padding: 40px;
+li>a:hover {
+    color: hsl(41, 84%, 58%);
 }
 
 main {
@@ -142,6 +159,3 @@ main {
         transform: translateY(-0px)
     }
 }
-
-
-/*Character page style*/
