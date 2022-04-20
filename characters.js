@@ -8,9 +8,7 @@ fetch(url)
             .filter(character => character.image)
         createUl(getCharacters)
     })
-    .catch(error => {
-        console.error(error)
-    })
+    .catch(errorMessage)
 
 const ul = document.createElement("ul")
 ul.classList.add("character-info")
@@ -36,4 +34,10 @@ const createUl = (getCharacters) => {
     `
     )
     main.append(ul)
+}
+
+function errorMessage() {
+    const error = document.querySelector("#error")
+    form.remove()
+    error.textContent = "Oh no the magic is gone! "
 }

@@ -15,6 +15,13 @@ fetch(url)
         </div>
         `)
         body.append(main)
+    }).catch(errorMessage)
 
-        createUl(getCharacters)
-    })
+
+
+
+function errorMessage() {
+    const error = document.querySelector("#error")
+    form.remove()
+    error.textContent = "Oh no the magic is gone! "
+}

@@ -2,9 +2,9 @@ const url = `https://fedeperin-harry-potter-api-en.herokuapp.com/db`
 const selectOne = document.querySelector(".character-select")
 const selectTwo = document.querySelector(".spell-select")
 const form = document.querySelector("form")
+const response = document.querySelector("#response")
 
-
-function characterOption() {
+function characterOptions() {
     fetch(url)
         .then(response => response.json())
         .then(parsedResponse => {
@@ -24,10 +24,10 @@ function characterOption() {
         .catch(errorMessage)
 }
 
-characterOption()
+characterOptions()
 
 
-function spellOption() {
+function spellOptions() {
     fetch(url)
         .then(response => response.json())
         .then(parsedResponse => {
@@ -46,37 +46,56 @@ function spellOption() {
         })
         .catch(errorMessage)
 }
-spellOption()
+spellOptions()
 
 function getInputs() {
     form.addEventListener("submit", (event) => {
         event.preventDefault()
         const formData = new FormData(event.target)
         const name = formData.get("name")
-        const selection1 = formData.get("character-select")
-        const selection2 = formData.get("spell-select")
+        const selectedCharacter = formData.get("character-select")
+        const selectedSpell = formData.get("spell-select")
 
-        console.log(selection1, selection2, name)
-            // if (selection1 === "Luna Lovegood" && selection2 === "Expecto Patronum") {
-            //     console.log(`${name} here is your Patronus`)
-            // } else if (selection1 === "Hermione Jean Granger" && selection2 === "Expulso") {
-            //     console.log(`${name} I can't find it`)
-            // }
-            // } else if (selection1 === "Hermione Jean Granger" && selection2 === "Exp") {
+        localStorage.setItem("name", name)
+        localStorage.setItem("character-select", selectedCharacter)
+        localStorage.setItem("spell-select", selectedSpell)
 
-        // } else if (selection1 === "Hermione Jean Granger" && selection2 === "Expecto Patronum") {
+        const userName = localStorage.getItem("name")
+        const div = document.createElement("div")
+        div.textContent = `${userName} here is your Patronus`
+        form.remove()
+        response.append(div)
+        const userCharacter = localStorage.getItem("character-select")
+        const userSpell = localStorage.getItem("spell-select")
+        const img = document.createElement("img")
+        img.classList.add("patronus-image")
+        if (userCharacter === "Hermione Jean Granger" && userSpell === "Expecto Patronum") {
+            img.src = "images/otter.jpg"
+            response.append(img)
+        } else if (userCharacter === "Hermione Jean Granger" && userSpell === "Expulso") {
+            img.src = "images/stag.jpg"
+            response.append(img)
+        } else if (userCharacter === "Luna Lovegood" && userSpell === "Expecto Patronum") {
+            img.src = "images/Rabbit.jpg"
+            response.append(img)
+        } else if (userCharacter === "Luna Lovegood" && userSpell === "Expulso") {
+            img.src = "images/doe.jpg"
+            response.append(img)
+        } else if (userCharacter === "Lord Voldemort" && userSpell === "Expecto Patronum") {
+            img.src = "images/wolf.jpg"
+            response.append(img)
+        } else if (userCharacter === "Lord Voldemort" && userSpell === "Expulso") {
+            img.src = "images/dog.jpg"
+            response.append(img)
+        }
 
-        // } else if (selection1 === "Hermione Jean Granger" && selection2 === "Expecto Patronum") {
 
-        // } else(selection1 === "Hermione Jean Granger" && selection2 === "Expecto Patronum") {
-
-        // }
     })
 }
-
 getInputs()
 
 function errorMessage() {
     const error = document.querySelector("#error")
-    error.textContent = "Something weird happned"
+    form.remove()
+    error.textContent = "Oh no the magic is gone! "
 }
