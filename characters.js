@@ -1,4 +1,3 @@
-const body = document.querySelector("body")
 const url = `http://hp-api.herokuapp.com/api/characters`
 const main = document.querySelector("main")
 
@@ -18,23 +17,23 @@ ul.classList.add("character-info")
 const createUl = (getCharacters) => {
     ul.innerHTML = getCharacters.map(characters =>
         `
-        <li class="card">
-        <h2 class="card-name">
-        ${characters.name}
-        </h2>
-        <img 
-        class="card-image" 
-        src="${characters.image}" 
-        alt="${characters.name}"
-        />
-        <p class="card-info" id="house">
-        House: ${characters.house}
-        </p>
-        <p class="card-info">
-        Patronus: ${characters.patronus}
-        </p>
-        </li>
-        `
+    <li class="card">
+    <h2 class="card-name">
+    ${characters.name}
+    </h2>
+    <img 
+    class="card-image" 
+    src="${characters.image}" 
+    alt="${characters.name}"
+    />
+    <p class="card-info" id="house">
+    House: ${characters.house}
+    </p>
+    <p class="card-info">
+    Patronus: ${characters.patronus}
+    </p>
+    </li>
+    `
     )
     main.append(ul)
 }

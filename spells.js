@@ -1,33 +1,20 @@
 const body = document.querySelector("body")
+const url = "https://fedeperin-harry-potter-api-en.herokuapp.com/spells"
 
 
-const getSpells = () => {
-    const promises = [];
-    for (let i = 1; i <= 72; i++) {
-        const url = `https://fedeperin-harry-potter-api-en.herokuapp.com/spells/${i}`;
-        promises.push(fetch(url)
-            .then((response) => response.json()));
-    }
-    Promise.all(promises).then((results) => {
-        const allSpells = results.map((data) => ({
-            name: data.spell,
-            id: data.id,
-            use: data.use
-        }));
-        createMain(allSpells)
-    });
-    const main = document.createElement("main")
-    main.classList.add("spells-list")
-    const createMain = (allSpells) => {
-        main.innerHTML = allSpells.map(spell => `
+fetch(url)
+    .then(response => response.json())
+    .then(parsedResponse => {
+        const main = document.createElement("main")
+        main.classList.add("spells-list")
+        main.innerHTML = parsedResponse.map(spells => `
         <div class="spell-container">
-        <h2 class="spell-title">${spell.name}</h2>
-        <p>What does ${spell.name} do?</p>
-        <p> ${spell.use}</p>
+        <h2 class="spell-title">${spells.spell}</h2>
+        <p>What does ${spells.spell} do?</p>
+        <p> ${spells.use}</p>
         </div>
         `)
         body.append(main)
-    }
-}
 
-getSpells()
+        createUl(getCharacters)
+    })
