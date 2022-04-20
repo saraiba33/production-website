@@ -9,8 +9,8 @@ fetch(url)
         main.classList.add("spells-list")
         main.innerHTML = parsedResponse.map(spells => `
         <div class="spell-container">
-        <h2 class="spell-title">${spells.spell}</h2>
-        <p class="question">What does ${spells.spell} do?</p>
+        <h1 class="spell-title">${spells.spell}</h1>
+        <h2 class="question">What does ${spells.spell} do?</h2>
         <p class="definition"> ${spells.use}</p>
         </div>
         `).join('')
