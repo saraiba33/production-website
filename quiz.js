@@ -62,7 +62,8 @@ function getInputs() {
 
         const userName = localStorage.getItem("name")
         const div = document.createElement("div")
-        div.textContent = `${userName} here is your Patronus`
+        div.classList.add("name-return")
+        div.textContent = `${userName}, here is your Patronus!`
         form.remove()
         responseDiv.append(div)
         const userCharacter = localStorage.getItem("character-select")
@@ -101,5 +102,5 @@ getInputs()
 function errorMessage() {
     const error = document.querySelector("#error")
     form.remove()
-    error.textContent = "Oh no the magic is gone! "
+    error.textContent = "Oh no! The magic's gone! Please try again later..."
 }

@@ -40,5 +40,5 @@ const createUl = (getCharacters) => {
 
 function errorMessage() {
     const error = document.querySelector("#error")
-    error.textContent = "Oh no the magic is gone!  "
+    error.textContent = "Oh no! The magic's gone! Please try again later..."
 }

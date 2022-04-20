@@ -10,8 +10,8 @@ fetch(url)
         main.innerHTML = parsedResponse.map(spells => `
         <div class="spell-container">
         <h2 class="spell-title">${spells.spell}</h2>
-        <p>What does ${spells.spell} do?</p>
-        <p> ${spells.use}</p>
+        <p class="question">What does ${spells.spell} do?</p>
+        <p class="definition"> ${spells.use}</p>
         </div>
         `).join('')
         body.append(main)
@@ -20,5 +20,5 @@ fetch(url)
 
 function errorMessage() {
     const error = document.querySelector("#error")
-    error.textContent = "Oh no the magic is gone! "
+    error.textContent = "Oh no! The magic's gone! Please try again later..."
 }
