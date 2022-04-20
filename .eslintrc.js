@@ -39,7 +39,6 @@ module.exports = {
         "quotes": ["error", "double"],
         "semi": ["error", "never"],
         "space-before-blocks": "error",
-        "space-before-function-paren": "error",
         "space-in-parens": "error",
         "spaced-comment": "error",
         "switch-colon-spacing": "error",

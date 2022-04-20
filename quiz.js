@@ -1,8 +1,8 @@
-const url = `https://fedeperin-harry-potter-api-en.herokuapp.com/db`
+const url = "https://fedeperin-harry-potter-api-en.herokuapp.com/db"
 const selectOne = document.querySelector(".character-select")
 const selectTwo = document.querySelector(".spell-select")
 const form = document.querySelector("form")
-const response = document.querySelector("#response")
+const responseDiv = document.querySelector("#response")
 
 function characterOptions() {
     fetch(url)
@@ -64,32 +64,36 @@ function getInputs() {
         const div = document.createElement("div")
         div.textContent = `${userName} here is your Patronus`
         form.remove()
-        response.append(div)
+        responseDiv.append(div)
         const userCharacter = localStorage.getItem("character-select")
         const userSpell = localStorage.getItem("spell-select")
         const img = document.createElement("img")
         img.classList.add("patronus-image")
-        if (userCharacter === "Hermione Jean Granger" && userSpell === "Expecto Patronum") {
+        if (userCharacter === "Hermione Jean Granger" &&
+            userSpell === "Expecto Patronum") {
             img.src = "images/otter.jpg"
-            response.append(img)
-        } else if (userCharacter === "Hermione Jean Granger" && userSpell === "Expulso") {
+            responseDiv.append(img)
+        } else if (userCharacter === "Hermione Jean Granger" &&
+            userSpell === "Expulso") {
             img.src = "images/stag.jpg"
-            response.append(img)
-        } else if (userCharacter === "Luna Lovegood" && userSpell === "Expecto Patronum") {
+            responseDiv.append(img)
+        } else if (userCharacter === "Luna Lovegood" &&
+            userSpell === "Expecto Patronum") {
             img.src = "images/Rabbit.jpg"
-            response.append(img)
-        } else if (userCharacter === "Luna Lovegood" && userSpell === "Expulso") {
+            responseDiv.append(img)
+        } else if (userCharacter === "Luna Lovegood" &&
+            userSpell === "Expulso") {
             img.src = "images/doe.jpg"
-            response.append(img)
-        } else if (userCharacter === "Lord Voldemort" && userSpell === "Expecto Patronum") {
+            responseDiv.append(img)
+        } else if (userCharacter === "Lord Voldemort" &&
+            userSpell === "Expecto Patronum") {
             img.src = "images/wolf.jpg"
-            response.append(img)
-        } else if (userCharacter === "Lord Voldemort" && userSpell === "Expulso") {
+            responseDiv.append(img)
+        } else if (userCharacter === "Lord Voldemort" &&
+            userSpell === "Expulso") {
             img.src = "images/dog.jpg"
-            response.append(img)
+            responseDiv.append(img)
         }
-
-
     })
 }
 getInputs()

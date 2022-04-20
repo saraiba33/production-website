@@ -63,19 +63,15 @@ main {
     padding: 40px;
 }
 
+.page-title {
+    font-family: 'Harry Potter', sans-serif;
+    font-size: 35px;
+}
+
 .catagories {
     display: relative;
     height: 680px;
     clip-path: polygon(0 0, 100% 0%, 100% 100%, 0% 100%);
-}
-
-@media (min-width: 1500px) {
-    .catagories {
-        display: grid;
-        grid-auto-columns: 1fr;
-        grid-template-rows: repeat(4, 1fr);
-        clip-path: none;
-    }
 }
 
 .cover {

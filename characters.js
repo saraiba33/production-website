@@ -1,4 +1,4 @@
-const url = `http://hp-api.herokuapp.com/api/characters`
+const url = "http://hp-api.herokuapp.com/api/characters"
 const main = document.querySelector("main")
 
 fetch(url)
@@ -32,12 +32,13 @@ const createUl = (getCharacters) => {
     </p>
     </li>
     `
-    )
+    ).join('')
+
+    console.log(ul.innerHTML)
     main.append(ul)
 }
 
 function errorMessage() {
     const error = document.querySelector("#error")
-    form.remove()
-    error.textContent = "Oh no the magic is gone! "
+    error.textContent = "Oh no the magic is gone!  "
 }

@@ -13,15 +13,12 @@ fetch(url)
         <p>What does ${spells.spell} do?</p>
         <p> ${spells.use}</p>
         </div>
-        `)
+        `).join('')
         body.append(main)
-    }).catch(errorMessage)
-
-
-
+    })
+    .catch(errorMessage)
 
 function errorMessage() {
     const error = document.querySelector("#error")
-    form.remove()
     error.textContent = "Oh no the magic is gone! "
 }
