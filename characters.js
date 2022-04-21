@@ -1,7 +1,7 @@
 const url = "https://hp-api.herokuapp.com/api/characters"
 const main = document.querySelector("main")
 
-fetch(url)
+fetch("https://hp-api.herokuapp.com/api/characters")
     .then(response => response.json())
     .then(parsedResponse => {
         const getCharacters = parsedResponse
@@ -33,8 +33,6 @@ const createUl = (getCharacters) => {
     </li>
     `
     ).join('')
-
-    console.log(ul.innerHTML)
     main.append(ul)
 }
 
