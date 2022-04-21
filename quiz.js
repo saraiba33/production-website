@@ -3,6 +3,8 @@ const selectOne = document.querySelector(".character-select")
 const selectTwo = document.querySelector(".spell-select")
 const form = document.querySelector("form")
 const responseDiv = document.querySelector("#response")
+const h1 = document.querySelector("h1")
+
 
 function characterOptions() {
     fetch(url)
@@ -65,6 +67,7 @@ function getInputs() {
         div.classList.add("name-return")
         div.textContent = `${userName}, here is your Patronus!`
         form.remove()
+        h1.remove()
         responseDiv.append(div)
         const userCharacter = localStorage.getItem("character-select")
         const userSpell = localStorage.getItem("spell-select")

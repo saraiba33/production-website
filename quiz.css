@@ -109,7 +109,7 @@ form {
 
 @media (max-width: 700px) {
     form {
-        width: 100%;
+        width: 90%;
     }
 }
 
@@ -148,14 +148,34 @@ label {
     font-size: 25px;
 }
 
+#response {
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+}
+
 .name-return {
     margin-top: 100px;
     font-size: 50px;
     text-align: center;
+    justify-self: center;
+}
+
+@media (max-width: 700px) {
+    .name-return {
+        font-size: 30px;
+    }
 }
 
 .patronus-image {
-    margin: 50px
+    text-align: center;
+    align-self: center;
+}
+
+@media (max-width: 700px) {
+    .patronus-image {
+        width: 75%
+    }
 }
 
 #error {

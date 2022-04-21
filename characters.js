@@ -16,9 +16,9 @@ const createUl = (getCharacters) => {
     ul.innerHTML = getCharacters.map(characters =>
         `
     <li class="card">
-    <h2 class="card-name">
+    <h1 class="card-name">
     ${characters.name}
-    </h2>
+    </h1>
     <img 
     class="card-image" 
     src="${characters.image}" 
